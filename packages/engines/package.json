@@ -15,7 +15,7 @@
     "@swc/jest": "0.2.29",
     "@types/jest": "29.5.4",
     "@types/node": "18.17.12",
-    "execa": "5.1.1",
+    "execa": "8.0.1",
     "jest": "29.6.4",
     "typescript": "5.2.2"
   },

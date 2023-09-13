@@ -1,7 +1,7 @@
 import { ErrorFormat } from '../../getPrismaClient'
 import { ObjectEnumValue, objectEnumValues } from '../../object-enums'
 import { CallSite } from '../../utils/CallSite'
-import { isDate, isValidDate } from '../../utils/date'
+import { formatDateToDateTime, isDate, isValidDate } from '../../utils/date'
 import { isDecimalJsLike } from '../../utils/decimalJsLike'
 import {
   JsonArgumentValue,
@@ -183,7 +183,7 @@ function serializeArgumentsValue(
 
   if (isDate(jsValue)) {
     if (isValidDate(jsValue)) {
-      return { $type: 'DateTime', value: jsValue.toISOString() }
+      return { $type: 'DateTime', value: formatDateToDateTime(jsValue) }
     } else {
       context.throwValidationError({
         kind: 'InvalidArgumentValue',

@@ -12,7 +12,7 @@ describe('isValidDate', () => {
 
 describe('formatDateToDateTime', () => {
   test('should format a Date object into a "YYYY-MM-DD HH:mm:ss.SSS" string', () => {
-    const dateTime = '2023-09-12 16:12:09'
+    const dateTime = '2023-09-12 16:12:09.000'
     const date = new Date(dateTime)
 
     expect(formatDateToDateTime(date)).toBe(dateTime)
